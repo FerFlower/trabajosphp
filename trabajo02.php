@@ -88,43 +88,80 @@ public function setnotaH4 ($notaH4){
           $notatrabajon  = $this->trabajofi*0.15;
           $notaparticipa = $this->participa*0.20;
           $notafinal1 = $notahabilidad+$notaexamen+$notatrabajon+$notaparticipa;
-          return $notafinal1;
-
-        
+          
+          return $notafinal1;     
     } 
+
+    public function notahabildadd(){
+        $promediohabili = (($this->notaH1+$this->notaH2+$this->notaH3+$this->notaH4) /4)*0.5;
+        return $promediohabili;
+    }
+    public function notaexamenf(){
+        $notaexamen   = $this->examenfi*0.15;
+        return $notaexamen;
+    }
+    public function notatrabajofi(){
+        $notatrabajon  = $this->trabajofi*0.15;
+        return $notatrabajon;
+    }
+    public function notaparticipaf(){
+        $notaparticipa = $this->participa*0.20;
+        return $notaparticipa;
+    }
+
     public function imprimir(){
         $notahabilidades = ($this->notaH1+$this->notaH2+$this->notaH3+$this->notaH4) /4;
+       
+        echo "<br>******************************************************************************</br>";
         echo "Nombre del Alumno : ".$this->getnombres()."<br>id del alumno: ".$this->getidalumno();
-        echo"<br>";
-        echo "<br>Notas de habilidades: ".$notahabilidades;
-        echo "<br>";
-        echo "<br>UNIDAD 1 :".$this->notaH1;
-        echo "<br>UNIDAD 2 :".$this->notaH2;
-        echo "<br>UNIDAD 3 :".$this->notaH3;
-        echo "<br>UNIDAD 4 :".$this->notaH4;
-        echo "<br></br>";
-        echo "Examen final:".$this->examenfi;
-        echo "<br></br>";
-        echo "Trabajo final:".$this->trabajofi;
-        echo "<br></br>";
-        echo "Participacion:".$this->participa;
-        echo "<br></br>";
-        $l = $this->notafinal();
-        echo "Nota final ".$l;
+        echo "<br>******************************************************************************</br>";
         
+        echo "<br>Nota de habilidades Unidad N° 01:".$this->notaH1;
+        echo "<br>Nota de habilidades Unidad N° 02 :".$this->notaH2;
+        echo "<br>Nota de habilidades Unidad N° 03 :".$this->notaH3;
+        echo "<br>Nota de habilidades Unidad N° 04 :".$this->notaH4;
+        echo "<br>";
+        echo "<br>******************************************************************************</br>";
+        echo "Promedio de Nota de Habilidades: ".$notahabilidades;
+        echo "<br>******************************************************************************</br>";
+        
+        echo "Nota de Examen final:".$this->examenfi;
+        echo "<br>******************************************************************************</br>";
+        echo "Nota de Trabajo final:".$this->trabajofi;
+        echo "<br>******************************************************************************</br>";
+        
+        echo "Nota de Participacion Final:".$this->participa;
+        echo "<br>******************************************************************************</br>";
+        echo "<br>Porcentaje de las Notas:";
+        echo "Nota de Habilidades %50";
+        echo "<br>".$this->notahabildadd()." Puntos</br>" ;
+        echo "<br>Nota de Examen Final %15";
+        echo "<br>".$this->notaexamenf()." Puntos</br>" ;
+        echo "<br>Nota de Trabajo Final %15";
+        echo "<br>".$this->notatrabajofi()." Puntos</br>" ;
+        echo "<br>Nota de Participacion Final %20";
+        echo "<br>".$this->notaparticipaf()." Puntos" ;
+        
+
+        echo "<br></br>";
+        echo "<br>******************************************************************************</br>";
+
+        echo "Nota final ".$this->notafinal();
+        echo "<br>******************************************************************************</br>";
+
     }
  
 }
 $a = new notahab ();
 $a->setnombres("Fernando Gomez Cazorla");
 $a->setidalumno(12314);
-$a->setnotaH1(12);
-$a->setnotaH2(13);
-$a->setnotaH3(16);
-$a->setnotaH4(15);
-$a->setexamefi(15);
-$a->settrabajofi(16);
-$a->setparticipa(18);
+$a->setnotaH1(20);
+$a->setnotaH2(20);
+$a->setnotaH3(20);
+$a->setnotaH4(20);
+$a->setexamefi(20);
+$a->settrabajofi(20);
+$a->setparticipa(20);
 
 $a->imprimir();
       
